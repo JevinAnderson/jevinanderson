@@ -1,0 +1,48 @@
+{
+  "name": "jevinanderson",
+  "description": "Redo of my home page website",
+  "version": "0.0.1",
+  "author": "Jevin Anderson",
+  "dependencies": {
+    "gatsby": "^2.0.35",
+    "gatsby-image": "^2.0.19",
+    "gatsby-plugin-manifest": "^2.0.7",
+    "gatsby-plugin-offline": "^2.0.10",
+    "gatsby-plugin-react-helmet": "^3.0.1",
+    "gatsby-plugin-sass": "^2.0.2",
+    "gatsby-plugin-sharp": "^2.0.10",
+    "gatsby-source-filesystem": "^2.0.6",
+    "gatsby-transformer-sharp": "^2.1.7",
+    "install": "^0.12.2",
+    "node-sass": "^4.9.4",
+    "npm": "^6.4.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby",
+    "Jevin",
+    "Anderson"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "npm run build && rm -rf docs && mv -f public docs",
+    "dev": "gatsby develop",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@material/button": "^0.41.0",
+    "prettier": "^1.14.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JevinAnderson/jevinanderson.git"
+  }
+}
