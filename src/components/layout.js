@@ -24,13 +24,6 @@ const Layout = ({ children }) => (
           meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
         >
           <html lang="en" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
-          />
-          <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div

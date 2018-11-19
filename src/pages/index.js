@@ -3,20 +3,9 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import Image from '../components/image';
-import waitForGlobal from '../utils/wait-for-global';
 
 class IndexPage extends Component {
   buttonRef = createRef();
-
-  componentDidMount() {
-    waitForGlobal('mdc').then(this.addRipple);
-  }
-
-  addRipple = mdc => {
-    if (this.buttonRef.current) {
-      mdc.ripple.MDCRipple.attachTo(this.buttonRef.current);
-    }
-  };
 
   render = () => (
     <Layout>
@@ -27,7 +16,7 @@ class IndexPage extends Component {
         <Image />
       </div>
       <Link to="/page-2/">
-        <button className="foo-button mdc-button mdc-button--raised" ref={this.buttonRef}>
+        <button className="btn btn-success" ref={this.buttonRef}>
           Go to Page 2
         </button>
       </Link>
