@@ -5,12 +5,17 @@ export function waitForGlobal(key) {
 
   if (globals[key]) return globals[key];
 
-  const promise = new Promise(resolve => {
+  const start = Date.now();
+
+  const promise = new Promise((resolve, reject) => {
     const interval = setInterval(() => {
       const global = window[key];
       if (global) {
         clearInterval(interval);
         resolve(global);
+      } else if (Date.now() - start > 2000) {
+        clearInterval(interval);
+        reject(`Couldn't find global variable: ${key}`);
       }
     }, 250);
   });

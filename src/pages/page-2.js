@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Ipsum from '../components/ipsum';
 
 const SecondPage = () => (
   <Layout>
@@ -10,6 +11,9 @@ const SecondPage = () => (
     <Link className="btn btn-outline-success" to="/">
       Go back to the homepage
     </Link>
+    <Ipsum />
+    <Ipsum />
+    <Ipsum />
   </Layout>
 );
 
