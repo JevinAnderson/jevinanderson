@@ -4,8 +4,10 @@ import { createLogger } from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import Thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import throttle from 'lodash/throttle';
 
 import { IS_DEVELOPMENT } from './environment';
+import { loadState, saveState } from './persistance';
 
 const INITIAL_STATE = {};
 const DEFAULT_ACTION = {};
@@ -28,7 +30,12 @@ if (IS_DEVELOPMENT) {
 
 const enhancer = composeWithDevTools(applyMiddleware(...middleware));
 
-export const store = createStore(reducer, {}, enhancer);
+export const store = createStore(reducer, loadState(), enhancer);
+store.subscribe(
+  throttle(() => {
+    saveState(store.getState());
+  }, 1000)
+);
 
 export const setState = state => {
   store.dispatch({
