@@ -9,8 +9,18 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import Banner from '../components/pages/index/banner/banner';
 import { setState, withProvider } from '../utils/redux';
+import Profiles from '../components/pages/index/profiles/index.js';
+import { addFontAwesome } from '../utils/add-font-awesome';
 
 class IndexPage extends Component {
+  constructor(props) {
+    super(props);
+
+    if (typeof window !== 'undefined') {
+      addFontAwesome();
+    }
+  }
+
   componentDidMount() {
     setState({
       views: this.props.views + 1
@@ -62,6 +72,8 @@ class IndexPage extends Component {
           </div>
         </div>
       </section>
+      <Profiles />
+
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
