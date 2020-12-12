@@ -18,14 +18,16 @@ class IndexPage extends Component {
       <Banner />
       <section className="container about-me">
         <div className="row">
-          <h2 className={cx('col-12 text-center', css.oneRemMarginAuto)}>About Me</h2>
+          <h2 className={cx('col-12 text-center', css.twoRemMarginAuto)}>About Me</h2>
         </div>
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-12 col-md-6">
             <ProfileImage />
           </div>
           <div className="col-12 col-md-6">
-            <h4 id="am-brief">Brief</h4>
+            <h4 id="am-brief" className={css.oneRemMarginAuto}>
+              Brief
+            </h4>
             <p>
               I'm a professional developer working at <a href="https://www.paypal.com/">PayPal</a>. I work on{' '}
               <a href="https://www.paypal.com/ppcreditapply/da/us/lander">PayPal's Credit offerings</a>. If you have{' '}
@@ -33,7 +35,7 @@ class IndexPage extends Component {
               <a href="https://www.paypal.com/us/for-you/pay-in-4">PayPal's installment plans</a>, you've probably seen
               my work. If you haven't, you might consider trying them out. I'd love to hear your feedback.
             </p>
-            <h4>Less Brief</h4>
+            <h4 className={css.oneRemMarginAuto}>Less Brief</h4>
             <p>
               After High School I served five years in the{' '}
               <a href="https://en.wikipedia.org/wiki/United_States_Marine_Corps">United States Marine Corps</a>. My

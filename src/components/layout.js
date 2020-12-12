@@ -24,7 +24,10 @@ const Layout = ({ children }) => (
       <>
         <Helmet
           title={data.site.siteMetadata.title}
-          meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
+          meta={[
+            { name: 'description', content: `Jevin Anderson's personal website.` },
+            { name: 'keywords', content: 'jevin, anderson, personal, website, developer' }
+          ]}
         >
           <html lang="en" />
           <link
@@ -34,7 +37,7 @@ const Layout = ({ children }) => (
             crossorigin="anonymous"
           />
         </Helmet>
-        <div className="container-fluid">
+        <div className="container-fluid noLeftPadding noRightPadding">
           <Navigation />
           {children}
         </div>

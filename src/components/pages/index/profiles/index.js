@@ -27,22 +27,22 @@ class Profiles extends Component {
   render = () =>
     this.state.loaded ? (
       <section id="online-presence">
-      <div className={cx(css.container, "row")}>
-        <div className="container">
-          <div className="row">
-            <h4 className={cx('col-12 text-center', css.header)}>Online Presence</h4>
-          </div>
-          <div className="row">
-            {PROFILES.map(profile => (
-              <div key={profile.alt} className="col-6 col-sm-2 text-center">
-                <a href={profile.href} className="profile-link" title={profile.alt}>
-                  <span className={cx(css.icon, profile.class)} alt={profile.alt} />
-                </a>
-              </div>
-            ))}
+        <div className={cx(css.container, 'row')}>
+          <div className="container">
+            <div className="row">
+              <h4 className={cx('col-12 text-center', css.header)}>Online Presence</h4>
+            </div>
+            <div className="row">
+              {PROFILES.map(profile => (
+                <div key={profile.alt} className="col-6 col-sm-2 text-center">
+                  <a href={profile.href} className="profile-link" title={profile.alt}>
+                    <span className={cx(css.icon, profile.class)} alt={profile.alt} />
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </section>
     ) : null;
 }
