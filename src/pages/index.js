@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
 
-import './index.scss';
+import css from './index.module.css';
 import Layout from '../components/layout';
-import Image from '../components/image';
-import Banner from '../components/pages/index/banner/banner';
+import ProfileImage from '../components/images/profile';
+import Banner from '../components/banner';
 import Profiles from '../components/pages/index/profiles/index.js';
 import { addFontAwesome } from '../utils/add-font-awesome';
+import cx from 'classnames';
 
 class IndexPage extends Component {
-  constructor(props) {
-    super(props);
-
-    if (typeof window !== 'undefined') {
-      addFontAwesome();
-    }
+  componentDidMount() {
+    addFontAwesome();
   }
 
   render = () => (
@@ -22,10 +18,12 @@ class IndexPage extends Component {
       <Banner />
       <section className="container about-me">
         <div className="row">
-          <h2 className=" col-12 text-center">About Me</h2>
+          <h2 className={cx('col-12 text-center', css.oneRemMarginAuto)}>About Me</h2>
         </div>
         <div className="row">
-          <div className="col-12 col-md-6">Photo of Jevin</div>
+          <div className="col-12 col-md-6">
+            <ProfileImage />
+          </div>
           <div className="col-12 col-md-6">
             <h4 id="am-brief">Brief</h4>
             <p>
@@ -76,17 +74,6 @@ class IndexPage extends Component {
         </div>
       </section>
       <Profiles />
-
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <p>Page views: {this.props.views}</p>
-      <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">
-        <button className="btn btn-success">Go to Page 2</button>
-      </Link>
     </Layout>
   );
 }
